@@ -1,0 +1,50 @@
+USE starwars;
+
+CREATE TABLE empire (     
+	id INT AUTO_INCREMENT PRIMARY KEY,     
+	name VARCHAR(255) NOT NULL,     
+	species VARCHAR(255) NOT NULL,     
+	affiliation VARCHAR(255) NOT NULL,     
+	rank VARCHAR(255) NOT NULL,     
+	created_at DATETIME DEFAULT NOW() 
+);
+
+CREATE TABLE empire (  
+	 id INT AUTO_INCREMENT PRIMARY KEY,     
+	name VARCHAR(255) NOT NULL,     
+	species VARCHAR(255) NOT NULL,     
+	affiliation VARCHAR(255) NOT NULL,     
+	`rank` VARCHAR(255) NOT NULL,     
+	created_at DATETIME DEFAULT NOW() 
+);
+
+INSERT INTO empire (name, species, affiliation, `rank`)
+VALUES
+    ('Darth Vader', 'Human', 'Galactic Empire', 'Sith Lord'),
+;
+
+INSERT INTO empire (name, species, affiliation, `rank`)
+VALUES
+    ('Grand Moff Tarkin', 'Human', 'Galactic Empire', 'Grand Moff'),
+;
+
+INSERT INTO empire (name, species, affiliation, `rank`) 
+VALUES 
+	('Emperor Palpatine', 'Human', 'Galactic Empire', 'Emperor')
+;
+
+INSERT INTO empire (name, species, affiliation, `rank`) 
+VALUES  
+	('General Veers', 'Human', 'Galactic Empire', 'General'),     
+	('Admiral Piett', 'Human', 'Galactic Empire', 'Admiral'),     
+	('Captain Needa', 'Human', 'Galactic Empire', 'Captain')
+;
+
+UPDATE empire
+SET `rank` = 'Master Sith Lord'
+WHERE name = 'Darth Vader';
+
+DELETE FROM empire
+WHERE id = 6;
+
+SELECT * FROM empire;
